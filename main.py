@@ -6,6 +6,7 @@ my_email = os.environ.get("MY_EMAIL")
 app_pass = os.environ.get("MY_PASSWORD")
 me = "nicky.bartell@gmail.com"
 kayla = "kaylawalsh180@gmail.com"
+mailing_list = [me]
 
 with open("quotes.txt") as file:
     all_quotes = file.readlines()
@@ -13,9 +14,10 @@ with open("quotes.txt") as file:
 
 
 with smtplib.SMTP("smtp.gmail.com", port=587) as connection:
-    connection.starttls()
-    connection.login(user=my_email, password=app_pass)
-    connection.sendmail(from_addr=my_email,
-                        to_addrs=me,
-                        msg=f"Subject: Motivational Quote\n\n{quote}")
+    for name in mailing_list:
+        connection.starttls()
+        connection.login(user=my_email, password=app_pass)
+        connection.sendmail(from_addr=my_email,
+                            to_addrs=name,
+                            msg=f"Subject: Motivational Quote\n\n{quote}")
 

@@ -1,4 +1,6 @@
 import os
+import smtplib
+import random
 
 my_email = os.environ.get("MY_EMAIL")
 app_pass = os.environ.get("MY_PASSWORD")

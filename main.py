@@ -1,5 +1,7 @@
-my_email = "nickbartell815@gmail.com"
-app_pass = "rtvc xzja kqre pidy"
+import os
+
+my_email = os.environ.get("MY_EMAIL")
+app_pass = os.environ.get("MY_PASSWORD")
 me = "nicky.bartell@gmail.com"
 kayla = "kaylawalsh180@gmail.com"
 

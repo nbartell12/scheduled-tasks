@@ -1,7 +1,3 @@
-import smtplib
-import datetime as dt
-import random
-
 my_email = "nickbartell815@gmail.com"
 app_pass = "rtvc xzja kqre pidy"
 me = "nicky.bartell@gmail.com"
